@@ -41,7 +41,8 @@ export default function Dashboard() {
     if (!ticker) return;
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/analyze/${ticker}`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/analyze/${ticker}`, {
         method: 'POST'
       });
       const result = await response.json();

@@ -93,6 +93,43 @@ A professional, multi-agent financial analysis platform that leverages Large Lan
 3.  Wait for the Multi-Agent system to fetch data, compute metrics, and generate the report (usually takes 3-5 seconds).
 4.  Review the **Executive Summary**, **Risk Analysis**, and **Financial Charts**.
 
+## ☁️ Deployment Guide
+
+The easiest way to deploy this full-stack application for **free** is to use **Render** for the Backend and **Vercel** for the Frontend.
+
+### Step 1: Deploy Backend (Render)
+1.  Push your code to a GitHub repository.
+2.  Create a new **Web Service** on [Render](https://render.com/).
+3.  Connect your repository.
+4.  **Settings**:
+    *   **Root Directory**: `backend`
+    *   **Build Command**: `pip install -r requirements.txt`
+    *   **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port 10000` (Render uses port 10000 by default)
+5.  **Environment Variables**:
+    *   Add `PYTHON_VERSION` = `3.10.0`
+    *   Add `GOOGLE_API_KEY` = `your_gemini_key`
+6.  Deploy! Once finished, copy your backend URL (e.g., `https://your-app.onrender.com`).
+
+### Step 2: Deploy Frontend (Vercel)
+1.  Create a new project on [Vercel](https://vercel.com/).
+2.  Connect the same GitHub repository.
+3.  **Settings**:
+    *   **Root Directory**: `frontend` (Vercel will auto-detect Next.js)
+4.  **Environment Variables**:
+    *   Add `NEXT_PUBLIC_API_URL` = `https://your-app.onrender.com` (Your Render Backend URL, **without** a trailing slash)
+5.  Deploy!
+
+---
+
+### ❓ FAQ: API Costs & Free Tier
+
+**Q: Will I be charged if others use my deployed site?**
+*   **Google Gemini Free Tier**: No. The free tier has strict rate limits (Requests Per Minute/Day). If your site becomes popular and hits these limits, the API will simply return a `429 Resource Exhausted` error, and the AI features will temporarily pause. You will **not** be charged unless you explicitly upgrade to a paid plan.
+*   **OpenAI API**: Yes. OpenAI does not have a "free tier" for API usage (only free trial credits). If you use an OpenAI Key, you will be billed per token. **Recommendation**: Stick to Gemini for a truly free personal project.
+
+**Q: Is it safe to put my API Key in Render?**
+*   **Yes**. Environment variables on Render/Vercel are stored securely on the server. Your API Key is **never** exposed to the frontend browser or the user.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
