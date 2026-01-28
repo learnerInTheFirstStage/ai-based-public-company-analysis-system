@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+duckdb
+langgraph
+langchain
+langchain-openai
+langchain-google-genai
+pydantic
+python-dotenv
+yfinance
