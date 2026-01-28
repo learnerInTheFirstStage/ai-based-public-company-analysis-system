@@ -2,7 +2,7 @@
 
 A professional, multi-agent financial analysis platform that leverages Large Language Models (LLMs) to provide real-time insights, risk detection, and comprehensive financial reports for public companies.
 
-![Dashboard Preview](https://github.com/user-attachments/assets/preview-image-placeholder.png)
+![Dashboard Preview](./dashboard.png)
 *(Note: Replace the placeholder above with your actual screenshot URL after uploading to GitHub)*
 
 ## ✨ Key Features
