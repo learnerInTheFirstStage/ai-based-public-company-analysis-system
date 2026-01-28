@@ -96,7 +96,3 @@ A professional, multi-agent financial analysis platform that leverages Large Lan
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License.
